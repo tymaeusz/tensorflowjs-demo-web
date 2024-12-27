@@ -1,0 +1,63 @@
+.counterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+}
+
+.fpsText {
+    font-weight: bold;
+    font-size: 18px;
+    color: black; /* Text color black */
+}
+
+.fpsLow {
+    color: red; /* Red for FPS below 30 */
+}
+
+.fpsMedium {
+    color: blue; /* Blue for FPS between 30 and 60 */
+}
+
+.fpsHigh {
+    color: green; /* Green for FPS above 60 */
+}
+
+.toggleButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Default button styles */
+.toggleButton {
+    background-color: #333; /* Default background color */
+    color: white;           /* Text color */
+    border: none;           /* Remove border */
+    padding: 10px 20px;     /* Padding for the button */
+    cursor: pointer;       /* Pointer cursor on hover */
+    border-radius: 5px;     /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition for changes */
+}
+
+/* Hover effect for "Mostrar" (Show) */
+.toggleButton.mostrar:hover {
+    background-color: blue; /* Blue highlight on hover */
+    transform: scale(1.05);  /* Slight scale effect on hover */
+}
+
+/* Hover effect for "Esconder" (Hide) */
+.toggleButton.esconder:hover {
+    background-color: red;  /* Red highlight on hover */
+    transform: scale(1.05);  /* Slight scale effect on hover */
+}

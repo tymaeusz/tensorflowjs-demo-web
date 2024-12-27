@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  traefik:
+    image: traefik
+    container_name: traefik
+    ports:
+      - "80:80"        # Porta para a aplicação
+      - "8080:8080"    # Porta para o painel de controle do Traefik
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik/traefik.yml:/etc/traefik/traefik.yml
+    networks:
+      - app-network
+
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+      target: dev
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.app.rule=Host(`localhost`)"
+      - "traefik.http.services.app.loadbalancer.server.port=3000"
+    volumes:
+      - ~/projects/tensorflowjs-demo-web/app:/app
+      - /app/node_modules
+    environment:
+      NODE_ENV: development
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
