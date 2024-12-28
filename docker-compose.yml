@@ -2,16 +2,21 @@ version: '3.8'
 
 services:
   traefik:
-    image: traefik
+    image: traefik:v2.10
     container_name: traefik
     ports:
-      - "80:80"
-      - "8080:8080"
+      - "80:80"        # HTTP
+      - "8080:8080"    # Traefik Dashboard
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik/traefik.yml:/etc/traefik/traefik.yml
     networks:
       - app-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dashboard.rule=Host(`localhost`)"
+      - "traefik.http.routers.dashboard.service=api@internal"
+      - "traefik.http.routers.dashboard.entrypoints=web"
 
   app:
     build:
@@ -20,10 +25,11 @@ services:
       target: dev
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.app.rule=Host(`app.localhost`)"
+      - "traefik.http.routers.app.rule=Host(`localhost`)"
       - "traefik.http.services.app.loadbalancer.server.port=3000"
     volumes:
       - ./app:/app
+      - /app/node_modules
     environment:
       NODE_ENV: development
     networks:
