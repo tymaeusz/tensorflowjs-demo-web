@@ -17,8 +17,8 @@ Este projeto demonstra a detecção de poses de mãos utilizando TensorFlow.js, 
 ## Tecnologias Usadas
 
 - [TensorFlow.js](https://www.tensorflow.org/js) - Biblioteca de aprendizado de máquina para a web.
-- [MediaPipe Hands](https://google.github.io/mediapipe/solutions/hands.html) - Modelo de rastreamento de mãos do Google.
-- [scatter-gl](https://github.com/scatter-plot/scatter-gl) - Visualização 3D para gráficos de dispersão.
+- [MediaPipe Hands](https://github.com/google-ai-edge/mediapipe/blob/master/docs/solutions/hands.md) - Modelo de rastreamento de mãos do Google.
+- [scatter-gl](https://github.com/PAIR-code/scatter-gl) - Visualização 3D para gráficos de dispersão.
 - [React](https://reactjs.org/) - Biblioteca JavaScript para construção de interfaces de usuário.
 - [Next.js](https://nextjs.org/) - Framework React para renderização no lado do servidor.
 - [Docker](https://www.docker.com/) - Plataforma de containers para construir e executar aplicações.
