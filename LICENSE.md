@@ -1,6 +1,6 @@
 # Licença MIT
 
-Copyright (c) [ano] [nome completo]
+Copyright (c) [2024] [Tymaeus]
 
 A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia
 deste software e dos arquivos de documentação associados (o "Software"), para lidar
