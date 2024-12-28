@@ -1,0 +1,28 @@
+{
+	"name": "TensorFlow.js Dev Container",
+	"dockerComposeFile": [
+		"../docker-compose.yml",
+		"docker-compose.yml"
+	],
+	"service": "app",
+	"workspaceFolder": "/app",
+	"shutdownAction": "stopCompose",
+	"customizations": {
+	  "vscode": {
+		"settings": {
+		  "terminal.integrated.defaultProfile.linux": "bash"
+		},
+		"extensions": [
+		  "dbaeumer.vscode-eslint",
+		  "esbenp.prettier-vscode"
+		]
+	  }
+	},
+	"forwardPorts": [3000],
+	"mounts": [
+	  "source=${localWorkspaceFolder}/app,target=/app,type=bind,consistency=cached"
+	],
+	"postCreateCommand": "npm install",
+	"remoteUser": "node"
+  }
+  

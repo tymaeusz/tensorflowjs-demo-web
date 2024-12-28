@@ -5,8 +5,8 @@ services:
     image: traefik
     container_name: traefik
     ports:
-      - "80:80"        # Application port
-      - "8080:8080"    # Traefik dashboard
+      - "80:80"
+      - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./traefik/traefik.yml:/etc/traefik/traefik.yml
@@ -24,7 +24,6 @@ services:
       - "traefik.http.services.app.loadbalancer.server.port=3000"
     volumes:
       - ./app:/app
-      - /app/node_modules
     environment:
       NODE_ENV: development
     networks:
