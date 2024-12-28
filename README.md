@@ -57,4 +57,4 @@ Fique à vontade para fazer um fork do repositório, melhorar e criar pull reque
 
 ## Licença
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE.MD) para mais detalhes.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
